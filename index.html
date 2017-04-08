@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app='taco'>
+
+<head>
+    <title>ToDoodles</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body ng-controller='mainController as vm'>
+    <header>
+      <h1>ToDoodles</h1>
+    </header>
+
+    <section class="animated bounceInDown col-md-6 col-md-offset-3">
+      <form novalidate name="forms" ng-submit="vm.submitForm(forms.$valid)">
+        <h3>Enter Todo Item</h3>
+        <input type="text" placeholder=" ..." ng-model="vm.newTodo" ng-show="!vm.inputbox" required>
+        <button type="submit" ng-show="!vm.inputbox">Add</button>
+      </form>
+      <ul>
+        <li ng-click="vm.allPress()">All</li>
+        <li ng-click="vm.activePress()">Active</li>
+        <li ng-click="vm.completedPress()">Completed</li>
+      </ul>
+    </section>
+
+    <main>
+      <div ng-repeat="item in vm.data track by $index" class="todos col-md-6 col-md-offset-3 animated bounceInDown">
+        <div class="col-md-2" ng-click="item.status = ! item.status; vm.activate(item)">
+          <i class="fa fa-circle-o" ng-show="!item.status" aria-hidden="true"></i>
+          <i class="fa fa-check-circle-o" ng-show="item.status" aria-hidden="true"></i>
+        </div>
+        <p class="col-md-9">{{item.name}}</p>
+        <i class="fa fa-times col-md-1" aria-hidden="true" ng-click="vm.delete(item)"></i>
+      </div>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src='js/main.js'></script>
+    <script src='js/services/API.js'></script>
+    <script src='js/controllers/mainController.js'></script>
+</body>
+
+</html>

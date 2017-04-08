@@ -1,0 +1,76 @@
+body {
+  background-color: #E1F5C4; }
+
+header {
+  background-color: #FF4E50;
+  text-align: center;
+  padding: 15px;
+  z-index: 9999999; }
+  header h1 {
+    margin: 0;
+    color: #E1F5C4; }
+
+section {
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #FC913A;
+  padding: 10px; }
+  section ul {
+    margin-right: 65px; }
+    section ul li {
+      display: inline-block;
+      color: #E1F5C4;
+      margin-top: 5px;
+      margin-right: 20px; }
+    section ul li:hover {
+      color: white;
+      text-decoration: underline; }
+  section h3 {
+    margin: 0;
+    color: #E1F5C4;
+    margin-bottom: 5px;
+    margin-right: 52px; }
+  section input, section button {
+    background-color: #e66904;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 20px;
+    color: #E1F5C4; }
+  section button {
+    background-color: #fdad6c; }
+  section input::-webkit-input-placeholder {
+    color: #FC913A; }
+
+main :nth-child(1) {
+  background-color: #f9d423 !important; }
+
+main :nth-child(2) {
+  background-color: #f4d648 !important; }
+
+main :nth-child(3) {
+  background-color: #f2dc70 !important; }
+
+main :nth-child(4) {
+  background-color: #f1e298 !important; }
+
+main .todos {
+  margin-top: 15px;
+  padding: 5px;
+  display: inline-block;
+  background-color: #f1e6b1;
+  border-radius: 5px; }
+  main .todos div {
+    background-color: inherit !important; }
+  main .todos i, main .todos p {
+    display: inline-block;
+    font-size: 30px;
+    color: #5a5a5a;
+    background-color: inherit !important;
+    margin-top: 5px; }
+  main .todos i {
+    margin-top: 10px; }
+
+main :nth-child(1) {
+  background-color: #f9d423; }
