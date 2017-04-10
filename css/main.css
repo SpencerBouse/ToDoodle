@@ -4,11 +4,50 @@ body {
 header {
   background-color: #FF4E50;
   text-align: center;
+  color: #E1F5C4;
   padding: 15px;
   z-index: 9999999; }
+  header ul {
+    display: inline-block;
+    float: right;
+    list-style-type: none; }
+    header ul li {
+      display: inline-block;
+      margin-left: 70px; }
+    header ul li:hover {
+      text-decoration: underline; }
   header h1 {
     margin: 0;
-    color: #E1F5C4; }
+    display: inline-block;
+    margin-left: 285px; }
+
+#saveCont, #loadCont {
+  background-color: #FF4E50;
+  position: absolute; }
+
+#saveCont {
+  width: 125px;
+  right: 111px;
+  border-radius: 5px;
+  padding: 5px; }
+  #saveCont input {
+    width: 100%;
+    display: inline-block;
+    background-color: #e70003;
+    border: none;
+    color: #FF4E50;
+    color: #ffb4b5; }
+  #saveCont input::-webkit-input-placeholder {
+    color: #ffb4b5; }
+  #saveCont button {
+    display: inline-block;
+    width: 45%;
+    background-color: #ff9b9c;
+    border: none;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 5px; }
 
 section {
   text-align: center;
@@ -17,14 +56,14 @@ section {
   background-color: #FC913A;
   padding: 10px; }
   section ul {
-    margin-right: 65px; }
+    margin-right: 65px;
+    margin-bottom: 0; }
     section ul li {
       display: inline-block;
       color: #E1F5C4;
       margin-top: 5px;
       margin-right: 20px; }
     section ul li:hover {
-      color: white;
       text-decoration: underline; }
   section h3 {
     margin: 0;
@@ -69,8 +108,11 @@ main .todos {
     color: #5a5a5a;
     background-color: inherit !important;
     margin-top: 5px; }
+    main .todos i strike, main .todos i span, main .todos p strike, main .todos p span {
+      background-color: inherit !important; }
   main .todos i {
-    margin-top: 10px; }
+    margin-top: 10px;
+    background-color: inherit !important; }
 
 main :nth-child(1) {
   background-color: #f9d423; }

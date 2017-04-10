@@ -11,16 +11,32 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
+<!-- Main Controller attached to body-->
 <body ng-controller='mainController as vm'>
+  <!--Header-->
     <header>
       <h1>ToDoodles</h1>
-    </header>
+      <ul>
+        <li>Save List
+          <div id="saveCont">
+            <form>
+              <input type="text" placeholder="Save list as...">
+              <button type="submit">Save</button>
+            <form>
+          </div>
+        </li>
+        <li ng-click="vm.loadClick = ! vm.loadClick;">Load List
+          <div id="loadCont" ng-show="!vm.loadClick">AHHHHH</div>
+        </li>
+      </ul>
 
+    </header>
+    <!--Input box-->
     <section class="animated bounceInDown col-md-6 col-md-offset-3">
       <form novalidate name="forms" ng-submit="vm.submitForm(forms.$valid)">
         <h3>Enter Todo Item</h3>
-        <input type="text" placeholder=" ..." ng-model="vm.newTodo" ng-show="!vm.inputbox" required>
-        <button type="submit" ng-show="!vm.inputbox">Add</button>
+        <input type="text" placeholder=" ..." ng-model="vm.newTodo" required>
+        <button type="submit">Add</button>
       </form>
       <ul>
         <li ng-click="vm.allPress()">All</li>
@@ -29,13 +45,14 @@
       </ul>
     </section>
 
+    <!--ng repeat for all list items-->
     <main>
       <div ng-repeat="item in vm.data track by $index" class="todos col-md-6 col-md-offset-3 animated bounceInDown">
         <div class="col-md-2" ng-click="item.status = ! item.status; vm.activate(item)">
           <i class="fa fa-circle-o" ng-show="!item.status" aria-hidden="true"></i>
           <i class="fa fa-check-circle-o" ng-show="item.status" aria-hidden="true"></i>
         </div>
-        <p class="col-md-9">{{item.name}}</p>
+        <p class="col-md-9"><strike ng-show="item.status">{{item.name}}</strike><span ng-show="!item.status">{{item.name}}</span></p>
         <i class="fa fa-times col-md-1" aria-hidden="true" ng-click="vm.delete(item)"></i>
       </div>
     </main>

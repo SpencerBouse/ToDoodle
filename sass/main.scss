@@ -1,22 +1,69 @@
+//General Style
 $red: #FF4E50;
 $orange: #FC913A;
 $yellow: #F9D423;
 $offwhite: #EDE574;
 $white: #E1F5C4;
-
 body{
   background-color: $white;
 }
+//header Style
 header{
   background-color: $red;
   text-align: center;
+  color: $white;
   padding: 15px;
   z-index: 9999999;
+  ul{
+    display: inline-block;
+    float: right;
+    list-style-type: none;
+    li{
+      display: inline-block;
+      margin-left: 70px;
+    }
+    li:hover{
+      text-decoration: underline;
+    }
+  }
   h1{
     margin: 0;
-    color: $white;
+    display: inline-block;
+    margin-left: 285px;
   }
 }
+#saveCont,#loadCont{
+  background-color: $red;
+  position: absolute;
+}
+#saveCont{
+  width: 125px;
+  right: 111px;
+  border-radius: 5px;
+  padding: 5px;
+  input{
+    width: 100%;
+    display: inline-block;
+    background-color: darken($red,20);
+    border: none;
+    color: $red;
+    color: lighten($red,20);
+  }
+  input::-webkit-input-placeholder {
+    color: lighten($red,20);
+  }
+  button{
+    display: inline-block;
+    width: 45%;
+    background-color: lighten($red,15);
+    border: none;
+    color: black;
+    margin-bottom: 5px;
+    margin-top:5px;
+    border-radius: 5px;
+  }
+}
+//style for input box
 section{
   text-align: center;
   margin-top: 20px;
@@ -25,6 +72,7 @@ section{
   padding: 10px;
   ul{
     margin-right: 65px;
+    margin-bottom: 0;
     li{
       display: inline-block;
       color: $white;
@@ -32,7 +80,6 @@ section{
       margin-right: 20px;
     }
     li:hover{
-      color: lighten($white,15);
       text-decoration: underline;
     }
   }
@@ -57,6 +104,7 @@ section{
     color: $orange;
   }
 }
+//style for all list items
 main{
   :nth-child(1){
     background-color: #f9d423 !important;
@@ -86,9 +134,13 @@ main{
       color: darken(grey,15);
       background-color: inherit !important;
       margin-top: 5px;
+      strike,span{
+        background-color: inherit !important;
+      }
     }
     i{
       margin-top: 10px;
+      background-color: inherit !important;
     }
   }
   :nth-child(1){
