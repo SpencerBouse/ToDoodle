@@ -69,6 +69,8 @@ main .todos {
     color: #5a5a5a;
     background-color: inherit !important;
     margin-top: 5px; }
+    main .todos i span, main .todos i strike, main .todos p span, main .todos p strike {
+      background-color: inherit !important; }
   main .todos i {
     margin-top: 10px; }
 

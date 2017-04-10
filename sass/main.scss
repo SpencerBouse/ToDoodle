@@ -86,6 +86,9 @@ main{
       color: darken(grey,15);
       background-color: inherit !important;
       margin-top: 5px;
+      span,strike{
+        background-color: inherit !important;
+      }
     }
     i{
       margin-top: 10px;

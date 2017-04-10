@@ -35,7 +35,7 @@
           <i class="fa fa-circle-o" ng-show="!item.status" aria-hidden="true"></i>
           <i class="fa fa-check-circle-o" ng-show="item.status" aria-hidden="true"></i>
         </div>
-        <p class="col-md-9">{{item.name}}</p>
+        <p class="col-md-9"><strike ng-show="item.status">{{item.name}}</strike><span ng-show="!item.status">{{item.name}}</span></p>
         <i class="fa fa-times col-md-1" aria-hidden="true" ng-click="vm.delete(item)"></i>
       </div>
     </main>
